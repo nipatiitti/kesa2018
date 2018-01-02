@@ -2,16 +2,24 @@
   "name": "kesa2018",
   "version": "1.0.0",
   "description": "Simple website",
-  "main": "index.js",
+  "main": "server/server.js",
   "repository": "https://github.com/nipatiitti/kesa2018.git",
   "author": "Niilo Jaakkola <niilo.jaakkola@icloud.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc0",
+    "morgan": "^1.9.0"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "build": "rimraf dist/ && babel ./server/ --out-dir dist/ --copy-files",
+    "start": "npm run build && node dist/index.js",
     "heroku-postbuild": "cd front-end/ && npm install --only=dev && npm install && npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.2"
   }
 }

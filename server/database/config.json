@@ -1,0 +1,3 @@
+{
+  "URL": "mongodb://Nipatiitti:Kukka11@kesa2018-shard-00-00-qgrdr.mongodb.net:27017,kesa2018-shard-00-01-qgrdr.mongodb.net:27017,kesa2018-shard-00-02-qgrdr.mongodb.net:27017/temperatures?ssl=true&replicaSet=kesa2018-shard-0&authSource=admin"
+}
