@@ -23,11 +23,11 @@ async function handleGet(req, res) {
     else if( hasProp(req.query, "all") && req.query.all == "true") {
       try {
         let data = [];
-        places.forEach((location) => {
+        await Promise.all(places.map(async (location) => {
           let dataToPush = await singlePoint(DataModel, location);
           if(dataToPush !== undefined)
             data.push(dataToPush);
-        })
+        }));
         if (data.lenght > 0)
           res.json(data);
         else
