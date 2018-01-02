@@ -13,14 +13,14 @@ function handlePost(req, res) {
     // Save data
     data.save(err => {
       if(err) {
-        res.status(500).send({ error: 'Error saving data!' });
+        res.status(500).send({ error: 'Error saving data!: ' + err});
         return;
       };
       res.send('Added data');
     });
   } else {
     // If not valid
-    res.status(500).send({ error: 'Not valid' });
+    res.status(500).send({ error: 'Not valid object' });
   }
 }
 
