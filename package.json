@@ -1,0 +1,17 @@
+{
+  "name": "kesa2018",
+  "version": "1.0.0",
+  "description": "Simple website",
+  "main": "index.js",
+  "repository": "https://github.com/nipatiitti/kesa2018.git",
+  "author": "Niilo Jaakkola <niilo.jaakkola@icloud.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "heroku-postbuild": "cd front-end/ && npm install --only=dev && npm install && npm run build"
+  }
+}
