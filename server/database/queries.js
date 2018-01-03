@@ -9,10 +9,10 @@ export function oneDay(Model, location) {
   }
 }
 
-export function singlePoint(Model, location) {
+export function singlePoint(Model, location, n) {
   let point;
   if(Model && location) {
-    return Model.findOne({ place: location }).sort('-time').exec();
+    return Model.find({ place: location }).sort('-time').limit(n).exec();
   } else {
     throw "Incorrect params"
   }

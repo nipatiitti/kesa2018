@@ -1,11 +1,11 @@
-import { validate } from './utils';
+import { validate, validPlace } from './utils';
 import { DataModel } from './database/models';
 
 function handlePost(req, res) {
   // Validate data, make object if valid
-  if(validate(req.query)) {
+  if(validate(req.query) && validPlace(req.query.place) && !isNaN(parseInt(req.query.temp))) {
     let data = new DataModel({
-      temp: req.query.temp,
+      temp: parseInt(req.query.temp),
       time: Math.floor(Date.now() / 1000),
       place: req.query.place,
     });
