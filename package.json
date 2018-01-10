@@ -15,7 +15,7 @@
   "scripts": {
     "build": "rimraf dist/ && babel ./server/ --out-dir dist/ --copy-files",
     "start": "npm run build && node dist/index.js",
-    "heroku-postbuild": "cd front-end/ && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd front-end/ && npm install --only=dev && npm install && npm run build && cd .. && npm install && npm start"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
